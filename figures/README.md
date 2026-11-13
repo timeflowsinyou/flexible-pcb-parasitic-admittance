@@ -1,3 +1,6 @@
-# Figures — pending addition
+# Publication figures
 
-Include executable plotting scripts and source-grade figures where publication/reuse rights allow. Reference manuscript figure numbers and exact source data/parameter hashes. Do not manually edit numerical plots without an auditable generating script.
+`publication/` contains final Figs. 2–6. Exact source tables and audit records are under
+`results/figure_sources/`; original builders are under `src/scientific/`. Figure 1 is
+excluded pending permission for redistribution of adapted material. No figure was
+manually edited during packaging.

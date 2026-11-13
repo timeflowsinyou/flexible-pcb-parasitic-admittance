@@ -1,3 +1,6 @@
-# Source scripts — pending addition
+# Scientific source scripts
 
-Add only the final, verified standalone scripts required by this manuscript. Keep unmodified upstream experimental scripts or make explicit, audited copies. Include all dependencies or documented imports for rerunning identification and validation.
+`scientific/` contains byte-identical copies of the selected original identification,
+calibration, held-out validation, no-parasitics, and figure scripts. They intentionally
+retain original paths for provenance. Portable repository checks are under `scripts/`.
+See `docs/SOURCE_INVENTORY.md` for dependencies and uncertainties.

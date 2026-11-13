@@ -1,0 +1,123 @@
+{
+  "version": "1.0.0",
+  "created_utc": "2026-11-10T16:33:52.713789+00:00",
+  "mode": "quick_ablation",
+  "status": "COMPLETE",
+  "provenance_note": "Diagnostic ablation: NoParasitics inherits the E2 historical intrinsic reference as its no-load prior. This is NOT a fully independently optimized historical control.",
+  "E2_check": {
+    "E2_Z_matches": true,
+    "E2_MAPE_matches": true,
+    "E2_phase_matches": true
+  },
+  "n_loaded_sweeps": 21,
+  "n_unloaded_sweeps": 1,
+  "n_frequencies": 5,
+  "n_comparisons_per_model": 630,
+  "n_physical_independent_loaded_sweeps": 21,
+  "unloaded_calibration_pairs": 91,
+  "loaded_fit_pairs": [
+    46,
+    45
+  ],
+  "loaded_heldout_pairs": [
+    45,
+    46
+  ],
+  "known_active_sensors": true,
+  "metric_aggregation": "arithmetic mean of per-sweep, per-frequency, per-fold, per-initialization errors",
+  "additional_notes": [
+    "Yp is identically zero in the NoParasitics model at all frequencies.",
+    "E2 frozen Gp,Cp are unchanged and reconstructed from E2 CSVs.",
+    "NoParasitics unloaded and loaded intrinsic parameters are re-fitted, not reused from E2 predictions.",
+    "No-load calibration uses all 91 measured pairs for both methods.",
+    "Only loaded-state parameters are fit on training terminal pairs; 45 or 46 loaded terminal pairs are held out.",
+    "The 630 paired rows are repeated numerical evaluations, not 630 physical experiments.",
+    "The comparison tests held-out predictive value, not physical absolute parasitic-component accuracy."
+  ],
+  "input_sources": {
+    "E2_validator": "D:\\IEEE_TIM_related\\Simulation_Experiment\\validate_E2_locality_multifrequency.py",
+    "V2_6": "D:\\IEEE_TIM_related\\Simulation_Experiment\\V2_6_validate_22_sweeps_fixed_parasitics.py",
+    "V2_4": "D:\\IEEE_TIM_related\\Simulation_Experiment\\V2_4_fixed_parasitic_intrinsic_drift.py",
+    "V2_7_summary": "D:\\IEEE_TIM_related\\Simulation_Experiment\\V2_7_publication_validation\\run_20261105T150005_372663Z\\V2_7_summary.json",
+    "I5_checkpoint": "D:\\IEEE_TIM_related\\Simulation_Experiment\\experiment_I5_checkpointed_convergence\\run_20261104T090803_878019Z\\checkpoint.pt"
+  },
+  "input_sha256": {
+    "E2_validator": "9853a8bfe2185a8772624e1320125ae48cb93cf1ef932bed1df5e3673fec9f37",
+    "V2_6": "52510fbfb58733d9ec752f4f9d3a19c3568275047359e4ba62de0bd9b0020495",
+    "V2_7_summary": "b266bfe4a6e4b15bfa06ffac8a0ed851d04cc39b473fda5a151b0ae692a29812",
+    "I5_checkpoint": "1840612c1acb81c1e4bb97df3cfb4315a76deb587a991627ee46563d91cbe366",
+    "D:\\IEEE_TIM_related\\Simulation_Experiment\\experiment_I5_S2_E1_E2_E3\\E2_weak_S2_prior\\init_05pct\\parasitic_parameters.csv": "cc9d33ce884c4ed22ea9df2b46f16eee2aab289f2c013d830042ed305966fe13",
+    "D:\\IEEE_TIM_related\\Simulation_Experiment\\experiment_I5_S2_E1_E2_E3\\E2_weak_S2_prior\\init_05pct\\baseline_sensor_parameters.csv": "9a076492050537172e128566493dc78702fe9b7d0d8fefb6b3aac36c30379349",
+    "D:\\IEEE_TIM_related\\Simulation_Experiment\\experiment_I5_S2_E1_E2_E3\\E2_weak_S2_prior\\init_05pct\\fit_summary.json": "7fdd6258a2a334bf15e61361412baa44fa1f292e409dbc728a256ad3a66a4ca9",
+    "D:\\IEEE_TIM_related\\Simulation_Experiment\\experiment_I5_S2_E1_E2_E3\\E2_weak_S2_prior\\init_30pct\\parasitic_parameters.csv": "39a833d5ed33404f5a9854961e2efee4318e0c5cb195f29450df0eb4d618cfb8",
+    "D:\\IEEE_TIM_related\\Simulation_Experiment\\experiment_I5_S2_E1_E2_E3\\E2_weak_S2_prior\\init_30pct\\baseline_sensor_parameters.csv": "df4e5a904ef1bfd7fc8b4136047ffd1d4afca04c9efcc72162af9834661bfc42",
+    "D:\\IEEE_TIM_related\\Simulation_Experiment\\experiment_I5_S2_E1_E2_E3\\E2_weak_S2_prior\\init_30pct\\fit_summary.json": "291ce90d7653ed66fa37ed01d2aa068dbc8ad09deaf078f3cdf1949bb3596c8f",
+    "D:\\IEEE_TIM_related\\Simulation_Experiment\\experiment_I5_S2_E1_E2_E3\\E2_weak_S2_prior\\init_70pct\\parasitic_parameters.csv": "2fc43e2e6be72066e7d52719f01a0d7f19e37b83cfc492a1c4984babf889caf7",
+    "D:\\IEEE_TIM_related\\Simulation_Experiment\\experiment_I5_S2_E1_E2_E3\\E2_weak_S2_prior\\init_70pct\\baseline_sensor_parameters.csv": "83d083d4f5717d447304d54dce85a886ed0745a0349f521e3f01afd7addcd4f9",
+    "D:\\IEEE_TIM_related\\Simulation_Experiment\\experiment_I5_S2_E1_E2_E3\\E2_weak_S2_prior\\init_70pct\\fit_summary.json": "ee359ba0deeb02ed0bc74956113d6fdba2147530b46a07b90a68067ebc0c82eb"
+  },
+  "paired_difference_summary": {
+    "relative_Z_L2": {
+      "mean_delta_no_parasitics_minus_E2": 0.23472631604029126,
+      "median_delta": 0.23549871521424742,
+      "fraction_E2_better": 1.0,
+      "fraction_no_parasitics_better": 0.0,
+      "fraction_exactly_equal": 0.0
+    },
+    "relative_Y_L2": {
+      "mean_delta_no_parasitics_minus_E2": 0.13301543826144038,
+      "median_delta": 0.16262619540698636,
+      "fraction_E2_better": 0.9841269841269841,
+      "fraction_no_parasitics_better": 0.015873015873015872,
+      "fraction_exactly_equal": 0.0
+    },
+    "magnitude_MAPE": {
+      "mean_delta_no_parasitics_minus_E2": 0.16593445469660903,
+      "median_delta": 0.16742574875904603,
+      "fraction_E2_better": 1.0,
+      "fraction_no_parasitics_better": 0.0,
+      "fraction_exactly_equal": 0.0
+    },
+    "phase_MAE_deg": {
+      "mean_delta_no_parasitics_minus_E2": 0.0027433684915281324,
+      "median_delta": 0.0749020456441255,
+      "fraction_E2_better": 0.5476190476190477,
+      "fraction_no_parasitics_better": 0.4523809523809524,
+      "fraction_exactly_equal": 0.0
+    }
+  },
+  "overall": [
+    {
+      "method": "E2_fixed_parasitics",
+      "n_evaluations": 630,
+      "relative_Z_L2": 0.07248932352514488,
+      "relative_Y_L2": 0.11221025025086662,
+      "magnitude_MAPE": 0.051012205181862974,
+      "phase_MAE_deg": 1.4585956612044686,
+      "relative_Z_L2_pct": 7.248932352514488,
+      "relative_Y_L2_pct": 11.22102502508666,
+      "magnitude_MAPE_pct": 5.101220518186297
+    },
+    {
+      "method": "NoParasitics_recalibrated",
+      "n_evaluations": 630,
+      "relative_Z_L2": 0.30721563956543607,
+      "relative_Y_L2": 0.24522568851230697,
+      "magnitude_MAPE": 0.21694665987847198,
+      "phase_MAE_deg": 1.4613390296959967,
+      "relative_Z_L2_pct": 30.72156395654361,
+      "relative_Y_L2_pct": 24.522568851230698,
+      "magnitude_MAPE_pct": 21.6946659878472
+    }
+  ],
+  "n_unloaded_components_at_bound_by_method": {
+    "E2_fixed_parasitics": {
+      "mean": 1.1333333333333333,
+      "max": 7
+    },
+    "NoParasitics_recalibrated": {
+      "mean": 1.8,
+      "max": 9
+    }
+  }
+}

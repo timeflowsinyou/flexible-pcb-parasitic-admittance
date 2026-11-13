@@ -1,0 +1,49 @@
+{
+  "created_utc": "2026-11-09T13:52:29.881281+00:00",
+  "input_root": "D:\\IEEE_TIM_related\\Simulation_Experiment",
+  "output_dir": "D:\\IEEE_TIM_related\\Simulation_Experiment\\Chapter4_E2_Figures_Updated\\run_20261109T135226_686207Z",
+  "identification": "Joint forward-model identification with weak logarithmic regularization of unloaded S2 (lambda=1e-4); plotted model startup fraction 0.30 for Fig2",
+  "sources": {
+    "Fig2": {
+      "path": "D:\\IEEE_TIM_related\\Simulation_Experiment\\Chapter4_E2_One_Run_Validated\\run_20261108T184226_941000Z\\E2_Fig2_data.csv",
+      "sha256": "7cb72fcd070a48ee0a521a9dfb215bff7d8e96805a326fb9b71a443f4ea89626"
+    },
+    "Fig3": {
+      "path": "D:\\IEEE_TIM_related\\Simulation_Experiment\\Chapter4_E2_One_Run_Validated\\run_20261108T184226_941000Z\\E2_Fig4_per_frequency_CORRECTED.csv",
+      "sha256": "adc0f188f06a972d578319d347c76119d05853db170cfaf21b41f806bfcb02d3"
+    },
+    "Fig4": {
+      "path": "D:\\IEEE_TIM_related\\Simulation_Experiment\\Chapter4_E2_One_Run_Validated\\run_20261108T184226_941000Z\\E2_sensorwise_summary.csv",
+      "sha256": "ba2221dc5c471efe7e860e2ce9f0d138dc7a955c9f3d72dd12ee949eab6e587f"
+    }
+  },
+  "figure2": {
+    "pairs": 91,
+    "plotted_restart_fraction": 0.3
+  },
+  "figure3": {
+    "mode": "corrected_symmetric",
+    "source_metric": "held-out relative L2 of complex impedance only",
+    "means": {
+      "before_Z": 0.18326041594253023,
+      "after_Z": 0.07246817501793315
+    }
+  },
+  "figure4": {
+    "min_percent": 5.47112585277705,
+    "max_percent": 10.96440018040373
+  },
+  "units": {
+    "Z": "|Z| / kΩ",
+    "phase": "φ / °",
+    "frequency": "Frequency / kHz",
+    "relative_error": "... / %"
+  },
+  "scientific_notes": [
+    "Fig2 uses all 91 unloaded paths for intrinsic-baseline calibration and is not an independent intrinsic-impedance ground truth.",
+    "Fig3 is impedance-only; the source and exclusion policy are recorded in figure3.mode. If corrected_after_only is used, the exclusion affects AFTER values only.",
+    "Fig4 uses unfiltered per-sensor E2 results from the selected E2 identification, not the historical V2.7 model.",
+    "630 evaluations are not 630 independent hardware scans.",
+    "Original CSVs are preserved; this script writes a new timestamped output directory."
+  ]
+}

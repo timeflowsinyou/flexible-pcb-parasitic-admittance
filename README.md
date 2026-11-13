@@ -1,58 +1,81 @@
-# Forward-Model-Based Estimation and Compensation of Distributed Parasitic Admittances in a Flexible PCB Sensor Matrix
+# Distributed parasitic-admittance identification in a flexible PCB sensor matrix
 
-Reproducibility repository for a research manuscript on a flexible PCB sensor matrix containing **14 terminal nodes and 19 sensing elements**. The model predicts **91 terminal-pair complex impedances** using a physics-based intrinsic network model and fixed, path-dependent equivalent parasitic admittances.
+This private repository packages the measured data, fixed parameters, scientific
+source code, numerical results, and publication figures used for the associated
+*tm* journal manuscript. The system has 14 terminal nodes, 19 sensing elements,
+and all 91 unordered terminal-pair impedance measurements.
 
-> **Repository status:** Initial project scaffold only. No experimental data, parameter files, or full analysis pipeline have been added yet. Do not treat this repository as a complete reproducibility package until the checklist below is complete.
+The repository now includes the 14 original `data/Load_label/` acquisition files.
+They contain 804 measured states at 100 kHz; the published historical identification
+uses the first 644 states exactly as specified by the preserved source. It also includes
+the 22 original files in `data/Multifrequency/`: one unloaded reference and 21 loaded
+10-frequency sweeps.
+Reported results use five frequencies, frequency-specific unloaded calibration,
+complementary 45/46-pair loaded fits, and predictions on the held-out pairs.
 
-## Study datasets
+## Quick verification
 
-- **Identification:** 644 experimental loading states, each with 91 complex terminal-pair measurements at 100 kHz. These support joint identification of intrinsic sensing-element parameters and shared parasitic-admittance parameters.
-- **Independent validation:** 22 complete measurement sweeps, each covering 91 terminal pairs at 10 frequencies (1 kHz to 1 MHz). These include one unloaded reference and 21 loaded measurements.
-- **Primary performance reporting:** Five evaluation frequencies: approximately 46.4, 100, 215.4, 464.2 kHz and 1 MHz. Validation uses complementary 45/46 pair partitions for loaded-state parameter fitting and held-out prediction.
-
-## Scope of the code
-
-The eventual release will distinguish:
-
-1. Shared equivalent parasitic-admittance identification from historical measurements.
-2. Frequency-specific intrinsic unloaded-state recalibration with fixed parasitic parameters.
-3. Loaded-state fitting and held-out prediction using the full measurement forward model.
-4. Parasitic-free control experiments and the figures/tables reported in the manuscript.
-
-**Important:** The effective parasitic model is not a direct measurement or unique physical decomposition of every parasitic component. The model's 100 kHz identification and its independent multifrequency predictive validation are different stages.
-
-## Repository layout
-
-```text
-data/
-  identification/    # Original, immutable historical 100 kHz measurements
-  validation/        # Original, immutable independent multifrequency sweeps
-  metadata/          # Terminal-pair order, sensing-element map, loading labels
-  processed/         # Reproducibly derived data only
-src/                 # Reproducible parameter estimation and validation code
-scripts/             # Data audits and pipeline entry points
-parameters/          # Identified parameters, provenance, numerical precision
-results/             # Aggregate numerical outputs and audit manifests
-figures/             # Source generation scripts and publication figures
-docs/                # Reproducibility, changelog and method notes
+```powershell
+python -m pip install -r requirements.txt
+python scripts/export_metadata.py
+python scripts/build_provenance_manifest.py
+python scripts/validate_repository.py --verify-provenance
+python scripts/reproduce_reported_metrics.py
 ```
 
-## Current data availability
+These commands do not run the expensive historical identification. The last command
+re-aggregates published metrics from packaged per-evaluation tables.
 
-Experimental data supporting the findings of the manuscript are available from the corresponding author upon reasonable request, subject to permission to share. This initial repository does **not** contain the datasets yet. A public release plan and archive/DOI can be added after agreement with the coauthors.
+## Layout
 
-## Reproducibility requirements before publication
+- `src/scientific/`: byte-identical scientific scripts from the research workspace.
+- `scripts/`: portable integrity, metadata, provenance, and metric checks.
+- `data/identification/`: historical impedance archive and extraction records.
+- `data/validation/`: 22-sweep multifrequency archive and extraction records.
+- `data/Load_label/`: 14 original 100 kHz acquisition files (804 states; first 644 used).
+- `data/Multifrequency/`: 22 original multifrequency sweep files.
+- `data/metadata/`: generated topology and canonical pair ordering.
+- `parameters/`: final selected weak-S2-prior fixed-parasitics parameters for the
+  5%, 30%, and 70% initialization fractions.
+- `results/`: held-out validation, no-parasitics control, and figure-source tables.
+- `figures/publication/`: final Figs. 2–6 in available formats.
+- `docs/`: source inventory, provenance, release review, and reproducibility details.
 
-- [ ] Inventory the 644 historical identification states and validate 91-pair ordering.
-- [ ] Inventory the 22 independent validation sweeps and validate the 10 frequencies.
-- [ ] Preserve original inputs and record SHA-256 hashes.
-- [ ] Add all final source scripts and their dependencies, excluding unrelated experiments.
-- [ ] Add final fixed equivalent parasitic parameter files, with provenance.
-- [ ] Provide executable commands to reproduce the manuscript's key metrics and Figs. 2–6.
-- [ ] Confirm permission to distribute all experimental data, figures and code.
-- [ ] Choose an appropriate software license in consultation with the coauthors.
-- [ ] Record the release commit and, if desired, create a permanent Zenodo archive.
+## Expected results
 
-## Provenance and audit
+Across 630 computational evaluations (21 loaded scans × 5 frequencies × 2
+partitions × 3 starts), the fixed-parasitics method gives mean complex-impedance
+relative L2 error 7.249%, magnitude MAPE 5.101%, and phase MAE 1.459°. The
+recalibrated no-parasitics control gives 30.722%, 21.695%, and 1.461°,
+respectively. These are repeated evaluations of 21 physical loaded sweeps, not
+630 independent hardware measurements.
 
-Source measurements must not be overwritten by processing scripts. See [`docs/REPRODUCIBILITY.md`](docs/REPRODUCIBILITY.md). The included standalone [`scripts/create_sha256_manifest.py`](scripts/create_sha256_manifest.py) creates a timestamped audit of files under `data/` and can verify an earlier manifest.
+Measured, parasitic-compensated, intrinsic forward-predicted, and complete
+parasitic-aware forward-predicted responses remain distinct. Held-out errors compare
+measured impedance with the complete forward prediction, including parasitics.
+
+## Limitations and release status
+
+- Unloaded calibration uses all 91 unloaded pairs and is therefore in-sample.
+- No direct parasitic-free or intrinsic-impedance ground truth is available.
+- The no-parasitics result is a diagnostic ablation, not an independently optimized
+  historical control.
+- The five-frequency evaluation is exploratory because the selected weak-S2-prior
+  fixed-parasitics parameterization was chosen using 100 kHz validation.
+- Figure 1 is excluded: it is adapted from prior work and redistribution permission
+  is not established.
+- Experimental archives require explicit review before any public release.
+- The publication figures were manually reviewed by the project owner on 2026-11-13
+  and confirmed to display normally.
+
+See [the reproducibility guide](docs/REPRODUCIBILITY.md), [source inventory](docs/SOURCE_INVENTORY.md),
+and [release review](docs/RELEASE_REVIEW.md).
+
+## Terminology and archived identifiers
+
+The publication-facing method name is **forward-model-based identification and
+compensation with fixed path-dependent parasitic admittances**. The selected parameter
+set is described as the **selected weak-S2-prior fixed-parasitics parameterization**.
+`E2` is only a historical internal run identifier. It is retained inside byte-identical
+source filenames, archived result columns, and audit metadata solely for traceability;
+it is not the public name of the model or method.

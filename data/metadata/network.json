@@ -1,0 +1,24 @@
+{
+  "terminal_nodes": 14,
+  "sensing_elements": 19,
+  "terminal_pairs": 91,
+  "grounded_node": 14,
+  "clockwise_node_order": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    14,
+    13,
+    12,
+    11,
+    10,
+    9,
+    8
+  ],
+  "pair_order_rule": "upper triangle of clockwise_node_order; validation labels normalize node IDs ascending without changing index order",
+  "source": "src/scientific/experiment_I5_checkpointed_convergence.py"
+}

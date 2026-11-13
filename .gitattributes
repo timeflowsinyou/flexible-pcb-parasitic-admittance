@@ -1,0 +1,4 @@
+# Matplotlib-generated SVG path data may contain insignificant trailing spaces.
+# Preserve the byte-identical publication artifacts and exclude only SVG files from
+# Git's whitespace-error classification.
+*.svg -whitespace

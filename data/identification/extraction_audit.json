@@ -1,0 +1,165 @@
+{
+  "source": "real measured TXT files; not simulation",
+  "script_version": "2.0.0",
+  "run_id": "run_20261103T145251_758871Z",
+  "run_utc": "2026-11-03T14:52:51.863774+00:00",
+  "input_folder": "D:\\IEEE_TIM_related\\Data\\Load_label",
+  "pattern": "*_Measurement*.txt",
+  "output_folder": "D:\\IEEE_TIM_related\\Simulation_Experiment\\real91_extract\\run_20261103T145251_758871Z",
+  "output_sha256": {
+    "real_91pair_measurements.npz": "de0dac606ef14d2235b3e381d9a05913270f6432b487acdbaa122dcf891024ac",
+    "sample_manifest.csv": "0c6fb544dcb0599172a26337ea0872e5422a5d8f0b460428e59e9eba08645286"
+  },
+  "data_verification": {
+    "all_source_filenames_untruncated": true,
+    "manifest_matches_npz": true,
+    "complex_impedance_roundtrip_exact": true,
+    "explicit_pair_order_verified_in_every_file": true
+  },
+  "n_samples": 804,
+  "n_measurements_per_sample": 91,
+  "frequency_hz": 100000.0,
+  "pair_order_canonical": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    14,
+    13,
+    12,
+    11,
+    10,
+    9,
+    8
+  ],
+  "physical_sign_diagnostics": {
+    "negative_real_Y_fraction": 0.0,
+    "negative_imag_Y_fraction": 0.0,
+    "negative_real_Z_fraction": 0.0,
+    "positive_imag_Z_fraction": 0.0
+  },
+  "files": [
+    {
+      "file": "2026_05_18-18_19_27_Measurement_all_Pairs_load.txt",
+      "status": "accepted",
+      "n_samples": 40,
+      "pair_order": "verified_from_explicit_pair_ids",
+      "size_bytes": 397481,
+      "sha256": "6663d6c8cbe6b703d86855e09c98bf8932b935b3e29637d6ff61fc280199a815"
+    },
+    {
+      "file": "2026_05_18-18_39_42_Measurement_all_Pairs_load.txt",
+      "status": "accepted",
+      "n_samples": 25,
+      "pair_order": "verified_from_explicit_pair_ids",
+      "size_bytes": 276746,
+      "sha256": "b7253ec91bdd9ea419a857deb489a4d3e3da8f8a8ef0e06306f40b26f0fe3d6b"
+    },
+    {
+      "file": "2026_05_18-18_56_34_Measurement_all_Pairs_load.txt",
+      "status": "accepted",
+      "n_samples": 106,
+      "pair_order": "verified_from_explicit_pair_ids",
+      "size_bytes": 1094992,
+      "sha256": "fa25f8fc1ec39df212573d5f07c391d8b88a10614f31ac0391349585f370ab32"
+    },
+    {
+      "file": "2026_05_18-19_41_43_Measurement_all_Pairs_load.txt",
+      "status": "accepted",
+      "n_samples": 4,
+      "pair_order": "verified_from_explicit_pair_ids",
+      "size_bytes": 43599,
+      "sha256": "3a995a1ea7ae9d712440b26c5bed2b762fdb39bd8489cd43f55d225c134f99a6"
+    },
+    {
+      "file": "2026_05_18-19_44_42_Measurement_all_Pairs_load.txt",
+      "status": "accepted",
+      "n_samples": 17,
+      "pair_order": "verified_from_explicit_pair_ids",
+      "size_bytes": 186032,
+      "sha256": "d1c4a8b1aca174cf1ae0220893a1401b57de84ebcf42c67c97ecd082c58dc7d8"
+    },
+    {
+      "file": "2026_05_18-19_51_31_Measurement_all_Pairs_load.txt",
+      "status": "accepted",
+      "n_samples": 151,
+      "pair_order": "verified_from_explicit_pair_ids",
+      "size_bytes": 1694218,
+      "sha256": "dcf647221f630114fae737e854f2569781788ab9fe667fda07586d760069b92c"
+    },
+    {
+      "file": "2026_05_18-20_40_02_Measurement_all_Pairs_load.txt",
+      "status": "accepted",
+      "n_samples": 14,
+      "pair_order": "verified_from_explicit_pair_ids",
+      "size_bytes": 161577,
+      "sha256": "5fd7d75e6403f136cbdb6fdfac95b10150a8826aee21ad6bd422e40c51aeea1f"
+    },
+    {
+      "file": "2026_05_19-12_10_35_Measurement_all_Pairs_load.txt",
+      "status": "accepted",
+      "n_samples": 69,
+      "pair_order": "verified_from_explicit_pair_ids",
+      "size_bytes": 743532,
+      "sha256": "638e6e3b762b068402c5e7a4c4d9a10fea291993bb4f3b65a25cd57ba14a2fca"
+    },
+    {
+      "file": "2026_05_19-12_38_19_Measurement_all_Pairs_load.txt",
+      "status": "accepted",
+      "n_samples": 15,
+      "pair_order": "verified_from_explicit_pair_ids",
+      "size_bytes": 162635,
+      "sha256": "668dbb445a4dc43f32613986ce1ae64451a880f7c8c06ae41eed4771de267fc3"
+    },
+    {
+      "file": "2026_05_19-12_47_35_Measurement_all_Pairs_load.txt",
+      "status": "accepted",
+      "n_samples": 101,
+      "pair_order": "verified_from_explicit_pair_ids",
+      "size_bytes": 1076449,
+      "sha256": "e985d169e2847cbc164949eda30e0d97676c5965173c265fc70a30099a5d0dcf"
+    },
+    {
+      "file": "2026_05_19-13_18_20_Measurement_all_Pairs_load.txt",
+      "status": "accepted",
+      "n_samples": 102,
+      "pair_order": "verified_from_explicit_pair_ids",
+      "size_bytes": 1104403,
+      "sha256": "08a519ac2987870cf834b609672521b4886d9e79f4e7070ead89352689bcc82e"
+    },
+    {
+      "file": "2026_06_26-11_06_22_Measurement_all_Pairs_load.txt",
+      "status": "accepted",
+      "n_samples": 43,
+      "pair_order": "verified_from_explicit_pair_ids",
+      "size_bytes": 496323,
+      "sha256": "c66ace08fd301d2c65e7f1e70c24fa5be271c29129db319deaf043156e8d4143"
+    },
+    {
+      "file": "2026_06_26-12_41_33_Measurement_all_Pairs_load.txt",
+      "status": "accepted",
+      "n_samples": 59,
+      "pair_order": "verified_from_explicit_pair_ids",
+      "size_bytes": 708656,
+      "sha256": "e83e7a216c9891a6916a51b960edfe841f429744cb17f3b956b75224c89948c2"
+    },
+    {
+      "file": "2026_06_26-16_03_49_Measurement_all_Pairs_load.txt",
+      "status": "accepted",
+      "n_samples": 58,
+      "pair_order": "verified_from_explicit_pair_ids",
+      "size_bytes": 803777,
+      "sha256": "dc0b21d860cfa84663374641464d4201a5bec765c969f192de3056d580123de2"
+    }
+  ],
+  "limitations": [
+    "TXT loader does not infer frequency; user must verify it.",
+    "Opaque channel IDs require explicit canonical ordering assumption.",
+    "No independent intrinsic-impedance reference is created.",
+    "No attempt to remove parasitics or fit a model.",
+    "Files rejected by strict 91-pair validation are excluded."
+  ]
+}

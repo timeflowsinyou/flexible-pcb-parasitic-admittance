@@ -1,0 +1,19 @@
+{
+  "scenario": "E2_weak_S2_prior",
+  "lambda": 0.0001,
+  "fraction": 0.7,
+  "n_epochs": 5200,
+  "unregularized_RMS_Y": 0.044602959742324914,
+  "unregularized_squared_Y_loss": 0.001989424017775457,
+  "S2_prior_log_squared": 0.7463035452431525,
+  "S2_G_S": 1.1388192839491347e-06,
+  "S2_B_S": 2.4948490006294544e-06,
+  "S2_Z_abs_ohm": 364633.8498700524,
+  "S2_to_reference_G_ratio": 0.6328406315539596,
+  "S2_to_reference_B_ratio": 0.48057205326217906,
+  "median_other18_G_S": 1.7995356605860291e-06,
+  "median_other18_B_S": 5.191415072295879e-06,
+  "mean_sample_relative_Z_L2": 0.051873951521121855,
+  "checkpoint_path": "D:\\IEEE_TIM_related\\Simulation_Experiment\\experiment_I5_S2_E1_E2_E3\\E2_weak_S2_prior\\init_70pct\\checkpoint.pt",
+  "fit_not_proof_of_convergence": true
+}

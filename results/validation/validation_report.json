@@ -1,0 +1,163 @@
+{
+  "script": "finalize_Chapter4_E2_validation_and_figures.py",
+  "created_utc": "2026-11-08T17:30:34.722364+00:00",
+  "candidate_model": "E2 weak S2 prior, lambda=1e-4",
+  "F2_status": "FORMULAS_AND_FORWARD_VERIFIED",
+  "input_sha256": {
+    "D:\\IEEE_TIM_related\\Simulation_Experiment\\E2_locality_and_multifrequency_validation\\run_20261108T161407_229602Z\\E0_E2_five_frequency_paired.csv": "1b40f168951e945f7da8a050981a345a473c936882740a5054441feef259c7d8",
+    "D:\\IEEE_TIM_related\\Simulation_Experiment\\E2_locality_and_multifrequency_validation\\run_20261108T161407_229602Z\\E0_E2_by_frequency.csv": "d2f4b6731355cefe1e0b40618451e07e0ee946a0b207a0aa19d0057cf271019a",
+    "D:\\IEEE_TIM_related\\Simulation_Experiment\\E2_locality_and_multifrequency_validation\\run_20261108T161407_229602Z\\E2_locality_summary.csv": "cfb64d4051f16d86d49e31c0638d507c43e30c9f715688c6df46dcd3dcb84e5c",
+    "D:\\IEEE_TIM_related\\Simulation_Experiment\\E2_locality_and_multifrequency_validation\\run_20261108T161407_229602Z\\E2_locality_ranked_all91.csv": "a99baf43241f80b1fbd8bf60ae3e07cc183aa10d060f87ecfc1cd9ac4ce13a59",
+    "D:\\IEEE_TIM_related\\Simulation_Experiment\\V2_7_publication_validation\\run_20261105T150005_372663Z\\V2_7_summary.json": "b266bfe4a6e4b15bfa06ffac8a0ed851d04cc39b473fda5a151b0ae692a29812"
+  },
+  "limitations": [
+    "Unloaded calibration uses all 91 unloaded terminal pairs; Fig2 is not an independent intrinsic impedance ground truth.",
+    "Only loaded-state sensor parameters are fitted on 45/46 path subset; the other pairs are held out.",
+    "Three optimizer starts and two folds are computational variations, NOT independent hardware measurements.",
+    "The two S16 scans are the only S16 physical repeat pair.",
+    "E2 was selected using 100 kHz validation, so five-frequency testing is exploratory rather than blinded model selection.",
+    "A physical intrinsic sensor impedance reference and directly measured parasitic-free response are unavailable.",
+    "The provisional <10% mean Z screening criterion and S2/median ratio<5 are analysis flags, not externally validated tolerances."
+  ],
+  "loaded_holdout": {
+    "n_physical_loaded_scans": 21,
+    "n_computational_paired_evaluations": 630,
+    "n_restarts": 3,
+    "n_frequencies": 5,
+    "n_complementary_partitions": 2,
+    "all_91_unloaded_pairs_used_for_calibration": true,
+    "results": {
+      "E0_original_I5": {
+        "relative_Z_L2": {
+          "mean": 0.07081155018294062,
+          "median": 0.06825320443953084,
+          "p90": 0.0965762031610792,
+          "n": 630
+        },
+        "relative_Y_L2": {
+          "mean": 0.12848006826118083,
+          "median": 0.06995052325885105,
+          "p90": 0.16614444512204107,
+          "n": 630
+        },
+        "magnitude_MAPE": {
+          "mean": 0.049224021623674674,
+          "median": 0.048144190074349696,
+          "p90": 0.062469836041408884,
+          "n": 630
+        },
+        "phase_MAE_deg": {
+          "mean": 1.5258632688268798,
+          "median": 1.2918681739231834,
+          "p90": 2.7391526764688883,
+          "n": 630
+        }
+      },
+      "E2_weak_S2_prior": {
+        "relative_Z_L2": {
+          "mean": 0.07248932352514484,
+          "median": 0.0687621628087231,
+          "p90": 0.1037305229078178,
+          "n": 630
+        },
+        "relative_Y_L2": {
+          "mean": 0.11221025025086659,
+          "median": 0.0717080427968432,
+          "p90": 0.14069316606833251,
+          "n": 630
+        },
+        "magnitude_MAPE": {
+          "mean": 0.05101220518186292,
+          "median": 0.049999931667869396,
+          "p90": 0.06342907717273184,
+          "n": 630
+        },
+        "phase_MAE_deg": {
+          "mean": 1.4585956612044686,
+          "median": 1.2104260491613203,
+          "p90": 2.671700646429269,
+          "n": 630
+        }
+      }
+    },
+    "E2_max_frequency_mean_Z_error": 0.0873310824877541,
+    "E2_provisional_global_screen_pass": true,
+    "preliminary_target": 0.1,
+    "note": "This is a preselected numerical screen, not proof of intrinsic or parasitic parameter truth."
+  },
+  "E2_calibration_ablation": {
+    "status": "VERIFIED",
+    "input_run": "D:\\IEEE_TIM_related\\Simulation_Experiment\\E2_baseline_calibration_ablation\\run_20261108T172736_742395Z",
+    "before_Z_mean": 0.1832793489781773,
+    "after_Z_mean": 0.07248932352514484
+  },
+  "F2": {
+    "status": "FORMULAS_AND_FORWARD_VERIFIED",
+    "input_run": "D:\\IEEE_TIM_related\\Simulation_Experiment\\Chapter4_E2_Fig2\\run_20261108T170511_306275Z",
+    "diagnostics": [
+      {
+        "init_tag": "05pct",
+        "max_comp_formula_rel_error": 1.7228488426624438e-15,
+        "max_forward_recomputed_rel_error": 1.5171028616694778e-06,
+        "no_load_complex_Z_fit_consistency_L2": 0.2161650413791746,
+        "no_load_complex_Y_fit_consistency_L2": 0.07652777572306484,
+        "S2_Z_ohm_after_calibration": 531476.812959883,
+        "median_other_18_Z_ohm_after_calibration": 193019.3165820967,
+        "S2_to_other18_Z_median_ratio": 2.7534902846567197,
+        "S2_calibration_G_multiplier": 0.6442097663939895,
+        "S2_calibration_B_multiplier": 0.6909272628553962,
+        "S2_above_provisional_ratio_screen": false,
+        "S2_calibration_hit_0p1_or_10_factor": false,
+        "forward_Z_abs_1_2_ohm": 396003.07414028264,
+        "forward_Z_abs_1_7_ohm": 716398.9940850808,
+        "forward_Z_abs_1_14_ohm": 708871.5117464198,
+        "forward_Z_abs_1_8_ohm": 383569.6749684628,
+        "node1_both_ends_lower_than_center": true
+      },
+      {
+        "init_tag": "30pct",
+        "max_comp_formula_rel_error": 1.6098170022479804e-15,
+        "max_forward_recomputed_rel_error": 2.6680987612493076e-06,
+        "no_load_complex_Z_fit_consistency_L2": 0.21698271975637776,
+        "no_load_complex_Y_fit_consistency_L2": 0.07691915440707474,
+        "S2_Z_ohm_after_calibration": 528805.6421076027,
+        "median_other_18_Z_ohm_after_calibration": 193691.12520162592,
+        "S2_to_other18_Z_median_ratio": 2.7301490533297996,
+        "S2_calibration_G_multiplier": 0.6472934212816778,
+        "S2_calibration_B_multiplier": 0.692243568354081,
+        "S2_above_provisional_ratio_screen": false,
+        "S2_calibration_hit_0p1_or_10_factor": false,
+        "forward_Z_abs_1_2_ohm": 399377.2080032259,
+        "forward_Z_abs_1_7_ohm": 719010.4786814876,
+        "forward_Z_abs_1_14_ohm": 711349.2098267319,
+        "forward_Z_abs_1_8_ohm": 382858.1640602375,
+        "node1_both_ends_lower_than_center": true
+      },
+      {
+        "init_tag": "70pct",
+        "max_comp_formula_rel_error": 1.385941392468644e-15,
+        "max_forward_recomputed_rel_error": 9.315663503847592e-07,
+        "no_load_complex_Z_fit_consistency_L2": 0.22660532545935405,
+        "no_load_complex_Y_fit_consistency_L2": 0.08009276934773307,
+        "S2_Z_ohm_after_calibration": 536661.3985962176,
+        "median_other_18_Z_ohm_after_calibration": 199327.44189846754,
+        "S2_to_other18_Z_median_ratio": 2.692360838451836,
+        "S2_calibration_G_multiplier": 0.6558385641437051,
+        "S2_calibration_B_multiplier": 0.6842655471933098,
+        "S2_above_provisional_ratio_screen": false,
+        "S2_calibration_hit_0p1_or_10_factor": false,
+        "forward_Z_abs_1_2_ohm": 417020.74384656246,
+        "forward_Z_abs_1_7_ohm": 742567.6118942056,
+        "forward_Z_abs_1_14_ohm": 733537.672326141,
+        "forward_Z_abs_1_8_ohm": 391042.02244258975,
+        "node1_both_ends_lower_than_center": true
+      }
+    ],
+    "S2_ratio_review_threshold": 5.0,
+    "S2_ratio_flag_present": false,
+    "S2_bound_flag_present": false,
+    "uniform_network_topology_sanity_pass": true,
+    "caveat": "No-load 91-pair forward-vs-compensated agreement is IN-SAMPLE after calibration of 19 intrinsic branches on all 91 no-load measurements. Independent evidence is the 630 LOADED held-out evaluations."
+  },
+  "status": "NUMERICAL_VALIDATION_COMPLETE"
+}

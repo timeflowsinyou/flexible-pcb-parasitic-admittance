@@ -21,3 +21,4 @@ Thumbs.db
 # Model debug and temporary logs
 *.log
 # Do not ignore original data intentionally; use explicit review before commits.
+results/audits/
